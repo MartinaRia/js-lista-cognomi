@@ -1,7 +1,8 @@
 /*DESCRIZIONE:
 Chiedi all’utente il cognome, inseriscilo in un array con altri cognomi e stampa la lista ordinata alfabeticamente.
 Scrivi anche la posizione della lista in cui il nuovo utente si trova
-BONUS: (ma solo se il resto è fatto)
+
+BONUS:
 faccio output anche della lista NON ordinata oltre il resto;
 output reso più carino e più elaborato, anche con CSS;
 come farei senza i metodi che ho trovato per risolvere le richieste dell’EX?
