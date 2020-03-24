@@ -13,8 +13,7 @@ e in caso del primo bonus, anche come poter ottenere una copia di un array;
 come sempre una cartella con solo le richieste base, se faccio bonus, cartella a parte.*/
 
 //BONUS 3: come farei senza i metodi che ho trovato per risolvere le richieste dell’EX?
-
-//Dichiarazione variabili
+// translate: fare ex1 senza array methods
 
 
 //Lista cognomi
@@ -24,7 +23,7 @@ console.log(surnameList); //check
 // Richiedi cognome utente
 var yourSurname = prompt("Prego inserisca qui il suo cognome");
 
-//Aggiunra in lista di yourSurname creando nuovo array
+//Aggiunta in lista di yourSurname creando nuovo array per non usare push()
 var surnameListNew = ["Rossi", "Bianchi", "Smith", "Doe" , yourSurname];
 console.log(surnameListNew); //check
 
@@ -36,22 +35,22 @@ console.log(arrFirstLetter); //check
 
 // var arrFirstLetter = ["R", "B", "S", "D", "R"]
 
-var tmp;
+var temp;
 for(var k = 0; k < arrFirstLetter.length; k++){
   //console.log(arrFirstLetter[k]);
   for(var j = k + 1; j < arrFirstLetter.length; j++){
     //console.log("log2" + arrFirstLetter[j]);
 
     if(arrFirstLetter[k] > arrFirstLetter[j]){
-      tmp = arrFirstLetter[k];
+      temp = arrFirstLetter[k];
       arrFirstLetter[k] = arrFirstLetter[j];
-      arrFirstLetter[j] = tmp;
-      console.log(tmp); //wtf?!?!?
+      arrFirstLetter[j] = temp;
+      console.log(temp); //wtf?!?!?
     }
   }
 }
 
-///// MI ARREEENDOOOOOOOO
+///// MI ARREEEEENDO.
 
 
 
