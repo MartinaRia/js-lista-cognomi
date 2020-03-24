@@ -38,5 +38,5 @@ for (var i = 0; i < surnameList.length; i++) {
   contenutoPrecedente = document.getElementById('a-b_surnameList').innerHTML;
 
   //Inserisci lista in lista ordinata di html
-  document.getElementById('a-b_surnameList').innerHTML = contenutoPrecedente + "<li>" + listItemsDivided + "</li>" ;
+  document.getElementById('a-b_surnameList').innerHTML = contenutoPrecedente + "<li>" + listItemsDivided + " - posizione nella lista: " + [i] + "</li>" ;
 }
