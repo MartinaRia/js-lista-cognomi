@@ -23,12 +23,42 @@ console.log(surnameList); //check
 
 // Richiedi cognome utente
 var yourSurname = prompt("Prego inserisca qui il suo cognome");
+
+//Aggiunra in lista di yourSurname creando nuovo array
 var surnameListNew = ["Rossi", "Bianchi", "Smith", "Doe" , yourSurname];
 console.log(surnameListNew); //check
 
-//Ordina alfabeticamente e constrolla
-surnameList.sort();
-console.log(surnameList);
+var arrFirstLetter =[]
+for (var i = 0; i < surnameListNew.length; i++) {
+  arrFirstLetter.push(surnameListNew[i][0]); //non sono riuscita a trovare un modo per popolare arrFirstLettersenza senza il push () - I LOSE (ma vado avanti lo stesso)
+}
+console.log(arrFirstLetter); //check
+
+// var arrFirstLetter = ["R", "B", "S", "D", "R"]
+
+var tmp;
+for(var k = 0; k < arrFirstLetter.length; k++){
+  //console.log(arrFirstLetter[k]);
+  for(var j = k + 1; j < arrFirstLetter.length; j++){
+    //console.log("log2" + arrFirstLetter[j]);
+
+    if(arrFirstLetter[k] > arrFirstLetter[j]){
+      tmp = arrFirstLetter[k];
+      arrFirstLetter[k] = arrFirstLetter[j];
+      arrFirstLetter[j] = tmp;
+      console.log(tmp); //wtf?!?!?
+    }
+  }
+}
+
+///// MI ARREEENDOOOOOOOO
+
+
+
+
+
+
+
 
 
 // //Ciclo per stampa array items
