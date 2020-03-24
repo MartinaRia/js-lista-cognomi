@@ -11,6 +11,9 @@ parte dell’EX è proprio cercarsi i metodi che JS mi mete a disposizione per o
 e in caso del primo bonus, anche come poter ottenere una copia di un array;
 come sempre una cartella con solo le richieste base, se faccio bonus, cartella a parte.*/
 
+//Dichiarazione variabili
+var listItemsDivided, contenutoPrecedente;
+
 //Lista cognomi
 var surnameList = ["Rossi", "Bianchi", "Smith", "Doe"];
 
@@ -18,7 +21,22 @@ var surnameList = ["Rossi", "Bianchi", "Smith", "Doe"];
 var yourSurname = prompt("Prego inserisca qui il suo cognome");
 
 //Inserisci cognome utente inserito nel prompt nella lista surnameList tramite push().
-surnameList.push(yourSurname)
+surnameList.push(yourSurname);
 
 //Controllo aggiunta nome a Lista
+// console.log(surnameList);
+
+//Ordina alfabeticamente e constrolla
+surnameList.sort();
 console.log(surnameList);
+
+//Ciclo per stampa array items
+for (var i = 0; i < surnameList.length; i++) {
+
+  listItemsDivided = surnameList[i];
+
+  contenutoPrecedente = document.getElementById('a-b_surnameList').innerHTML;
+
+  //Inserisci lista in lista ordinata di html
+  document.getElementById('a-b_surnameList').innerHTML = contenutoPrecedente + "<li>" + listItemsDivided + "</li>" ;
+}
