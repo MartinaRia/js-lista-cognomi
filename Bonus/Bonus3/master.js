@@ -1,19 +1,6 @@
 /*DESCRIZIONE:
-Chiedi all’utente il cognome, inseriscilo in un array con altri cognomi e stampa la lista ordinata alfabeticamente.
-Scrivi anche la posizione della lista in cui il nuovo utente si trova
-
-BONUS:
-faccio output anche della lista NON ordinata oltre il resto;
-output reso più carino e più elaborato, anche con CSS;
-come farei senza i metodi che ho trovato per risolvere le richieste dell’EX?
-
-NOTE:
-parte dell’EX è proprio cercarsi i metodi che JS mi mete a disposizione per ordinare un array e farmi ritornare la posizione di un dato elemento nell’array;
-e in caso del primo bonus, anche come poter ottenere una copia di un array;
-come sempre una cartella con solo le richieste base, se faccio bonus, cartella a parte.*/
-
-//BONUS 3: come farei senza i metodi che ho trovato per risolvere le richieste dell’EX?
-// translate: fare ex1 senza array methods
+Chiedi all’utente il cognome, inseriscilo in un array con altri cognomi e stampa la lista ordinata alfabeticamente ma senza i metodi
+*/
 
 
 //Lista cognomi
@@ -27,46 +14,30 @@ var yourSurname = prompt("Prego inserisca qui il suo cognome");
 var surnameListNew = ["Rossi", "Bianchi", "Smith", "Doe" , yourSurname];
 console.log(surnameListNew); //check
 
-var arrFirstLetter =[]
-for (var i = 0; i < surnameListNew.length; i++) {
-  arrFirstLetter.push(surnameListNew[i][0]); //non sono riuscita a trovare un modo per popolare arrFirstLettersenza senza il push () - I LOSE (ma vado avanti lo stesso)
-}
-console.log(arrFirstLetter); //check
+//Mettere a paragone ogni item dell'array con quello successivo a se stess in lista
+for(var k = 0; k < surnameListNew.length; k++){
+  //console.log(surnameListNew); //R-B-S-D-R
+  for(var j = k + 1; j < surnameListNew.length; j++){
+    //console.log(surnameListNew); //R:BSDR - B:SDR - S:DR - S:R - R
 
-// var arrFirstLetter = ["R", "B", "S", "D", "R"]
-
-var temp;
-for(var k = 0; k < arrFirstLetter.length; k++){
-  //console.log(arrFirstLetter[k]);
-  for(var j = k + 1; j < arrFirstLetter.length; j++){
-    //console.log("log2" + arrFirstLetter[j]);
-
-    if(arrFirstLetter[k] > arrFirstLetter[j]){
-      temp = arrFirstLetter[k];
-      arrFirstLetter[k] = arrFirstLetter[j];
-      arrFirstLetter[j] = temp;
-      console.log(temp); //wtf?!?!?
+    if(surnameListNew[k] > surnameListNew[j]){ //quando una lettera(R) è più grande di quella dopo(B)...
+      //...scambiale di posto facendo:
+      var temp = surnameListNew[k]; //temp=R
+      surnameListNew[k] = surnameListNew[j]; //R=B
+      surnameListNew[j] = temp; // B=temp
+      console.log(surnameListNew); //check
     }
   }
+
 }
 
-///// MI ARREEEEENDO.
+//Ciclo per stampa array items
+for (var i = 0; i < surnameListNew.length; i++) {
 
+  var listItemsDivided = surnameListNew[i];
 
+  var contenutoPrecedente = document.getElementById('a-b_surnameList').innerHTML;
 
-
-
-
-
-
-
-// //Ciclo per stampa array items
-// for (var i = 0; i < surnameList.length; i++) {
-//
-//   listItemsDivided = surnameList[i];
-//
-//   contenutoPrecedente = document.getElementById('a-b_surnameList').innerHTML;
-//
-//   //Inserisci lista in lista ordinata di html
-//   document.getElementById('a-b_surnameList').innerHTML = contenutoPrecedente + "<li>" + listItemsDivided + " - posizione nella lista: " + [i] + "</li>" ;
-// }
+  //Inserisci lista in lista ordinata di html
+  document.getElementById('a-b_surnameList').innerHTML = contenutoPrecedente + "<li>" + listItemsDivided + " - posizione nella lista: " + [i] + "</li>" ;
+}
